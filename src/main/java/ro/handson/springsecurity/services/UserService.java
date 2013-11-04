@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
-@Service
 public class UserService {
     @PreAuthorize("hasRole('admin')")
     public Collection<? extends GrantedAuthority> getAuthorities(UserDetails userDetails) {

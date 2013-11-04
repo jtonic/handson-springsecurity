@@ -3,8 +3,8 @@ package ro.handson.springsecurity;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
-import ro.handson.springsecurity.services.UserService;
 import ro.handson.springsecurity.controllers.ApplicationController;
+import ro.handson.springsecurity.services.UserService;
 
 /**
  * Created by jtonic on 11/4/13.
