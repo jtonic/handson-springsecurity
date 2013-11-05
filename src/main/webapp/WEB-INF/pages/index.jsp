@@ -14,11 +14,9 @@
                     <a href="spring_security_login">Sign In</a>
                 </p>
             </sec:authorize>
-
             <sec:authorize access="isAuthenticated()">
                 <p>Hello, ${userDetails.username}! <a href="j_spring_security_logout">Sign Out</a></p>
             </sec:authorize>
-
             <sec:authorize access="hasRole('admin')">
                 <p>
                     <a href="admin">Admin page</a>

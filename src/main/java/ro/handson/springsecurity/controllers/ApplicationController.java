@@ -42,4 +42,15 @@ public class ApplicationController {
         map.addAttribute("userAuthorities", securedMessage);
         return "admin";
     }
+
+    // over https
+    @RequestMapping(value = "/https/sensitive", method = RequestMethod.GET)
+    public String sensitive(ModelMap map) {
+        UserDetails userDetails =
+                (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Collection<? extends GrantedAuthority> securedMessage = userService.getAuthorities(userDetails);
+        map.addAttribute("userDetails", userDetails);
+        map.addAttribute("userAuthorities", securedMessage);
+        return "https/sensitive";
+    }
 }

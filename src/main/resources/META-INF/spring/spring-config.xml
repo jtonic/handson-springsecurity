@@ -10,13 +10,18 @@
     <global-method-security jsr250-annotations="enabled" pre-post-annotations="enabled" secured-annotations="enabled" />
 
     <http use-expressions="true">
+        <intercept-url pattern="/https/**" access="hasRole('admin')" requires-channel="https"/>
         <intercept-url pattern="/WEB-INF" access="permitAll" />
+        <intercept-url pattern="/spring_security_login" access="permitAll" requires-channel="https"/>
         <form-login />
         <logout logout-success-url="/" delete-cookies="JSESSIONID"/>
         <remember-me />
         <session-management invalid-session-url="/">
             <concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
         </session-management>
+        <port-mappings>
+            <port-mapping http="8080" https="8443"/>
+        </port-mappings>
     </http>
 
     <authentication-manager>
