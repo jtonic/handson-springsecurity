@@ -22,15 +22,7 @@
     <authentication-manager>
         <authentication-provider>
             <password-encoder ref="encoder"/>
-            <user-service>
-                <!-- Password: "koala" for both -->
-                <user name="user"
-                      password="4efe081594ce25ee4efd9f7067f7f678a347bccf2de201f3adf2a3eb544850b465b4e51cdc3fcdde"
-                      authorities="user"/>
-                <user name="admin"
-                      password="4efe081594ce25ee4efd9f7067f7f678a347bccf2de201f3adf2a3eb544850b465b4e51cdc3fcdde"
-                      authorities="admin"/>
-            </user-service>
+            <jdbc-user-service data-source-ref="dataSource"/>
         </authentication-provider>
     </authentication-manager>
 
